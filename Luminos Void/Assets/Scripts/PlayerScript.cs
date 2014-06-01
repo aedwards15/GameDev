@@ -13,10 +13,16 @@ public class PlayerScript : MonoBehaviour {
 	private WeaponScript weapons;
 	private List<Transform> childs;
 
+	private Color litUp;
+	private Color normalLight;
+
 	void Awake()
 	{
 		animator = GetComponent<Animator>();
 		childs = new List<Transform> ();
+
+		normalLight = this.renderer.material.color;
+		litUp = new Color (255, 255, 255, 255);
 		//weapons = GetComponentsInChildren<WeaponScript>();
 		for (int i = 0; i < transform.childCount; i++)
 		{
@@ -181,5 +187,22 @@ public class PlayerScript : MonoBehaviour {
 	{
 		HealthScript playerHealth = this.GetComponent<HealthScript>();
 		if (playerHealth != null) playerHealth.Damage(1);
+	}
+
+	void OnTriggerStay2D(Collider2D otherCollider)
+	{
+		TileScript tile = otherCollider.gameObject.GetComponent<TileScript> ();
+
+		if (tile != null)
+		{
+			if (tile.IsOn)
+			{
+				this.renderer.material.color = litUp;
+			}
+			else
+			{
+				this.renderer.material.color = normalLight;
+			}
+		}
 	}
 }
