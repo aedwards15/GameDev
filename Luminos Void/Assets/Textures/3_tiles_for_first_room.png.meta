@@ -1,0 +1,76 @@
+fileFormatVersion: 2
+guid: 599fa27c4547ca14ab007d95be981c4e
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: 3_tiles_for_first_room_0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 481
+        width: 248
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: 3_tiles_for_first_room_1
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 480
+        width: 248
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: 3_tiles_for_first_room_2
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 64
+        width: 248
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
