@@ -211,4 +211,15 @@ public class PlayerScript : MonoBehaviour {
 			}
 		}
 	}
+
+//	void OnTriggerEnter2D(Collider2D otherCollider)
+//	{
+//		CameraCollisionScript collider = otherCollider.GetComponent<CameraCollisionScript>();
+//
+//		if (collider != null)
+//		{
+//
+//		}
+//
+//	}
 }
