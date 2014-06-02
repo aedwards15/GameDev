@@ -185,8 +185,14 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		HealthScript playerHealth = this.GetComponent<HealthScript>();
-		if (playerHealth != null) playerHealth.Damage(1);
+		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript> ();
+
+		if (enemy != null)
+		{
+			HealthScript playerHealth = this.GetComponent<HealthScript>();
+			if (playerHealth != null) 
+				playerHealth.Damage(1);
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D otherCollider)

@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: 715982d7f614a4646bf7db60b53b6574
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: all_sprites_0
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 3171
+        width: 270
+        height: 191
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_1
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 3143
+        width: 268
+        height: 191
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_2
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 3132
+        width: 271
+        height: 225
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_3
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 3140
+        width: 271
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_4
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 3165
+        width: 169
+        height: 197
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_5
+      rect:
+        serializedVersion: 2
+        x: 2791
+        y: 3172
+        width: 170
+        height: 197
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_6
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 3187
+        width: 139
+        height: 167
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_7
+      rect:
+        serializedVersion: 2
+        x: 3359
+        y: 3222
+        width: 263
+        height: 225
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_8
+      rect:
+        serializedVersion: 2
+        x: 3834
+        y: 3222
+        width: 139
+        height: 163
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_9
+      rect:
+        serializedVersion: 2
+        x: 4052
+        y: 3222
+        width: 139
+        height: 163
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_10
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 3227
+        width: 95
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_11
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 3225
+        width: 94
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_12
+      rect:
+        serializedVersion: 2
+        x: 4713
+        y: 3234
+        width: 95
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_13
+      rect:
+        serializedVersion: 2
+        x: 4854
+        y: 3234
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_14
+      rect:
+        serializedVersion: 2
+        x: 4761
+        y: 2223
+        width: 387
+        height: 719
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_15
+      rect:
+        serializedVersion: 2
+        x: 2507
+        y: 2235
+        width: 1685
+        height: 800
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_16
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 2184
+        width: 1686
+        height: 801
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_18
+      rect:
+        serializedVersion: 2
+        x: 5605
+        y: 210
+        width: 253
+        height: 3430
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_19
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 155
+        width: 5219
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_20
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 249
+        width: 156
+        height: 3442
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_21
+      rect:
+        serializedVersion: 2
+        x: 2538
+        y: 1409
+        width: 778
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: all_sprites_23
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1502
+        width: 232
+        height: 349
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_24
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 911
+        width: 631
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: all_sprites_23
+      rect:
+        serializedVersion: 2
+        x: 4533
+        y: 1341
+        width: 319
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_24
+      rect:
+        serializedVersion: 2
+        x: 4054
+        y: 1616
+        width: 445
+        height: 346
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_25
+      rect:
+        serializedVersion: 2
+        x: 3601
+        y: 1148
+        width: 564
+        height: 433
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: all_sprites_26
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 3500
+        width: 5271
+        height: 259
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 
