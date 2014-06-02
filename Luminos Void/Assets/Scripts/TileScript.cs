@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class TileScript : MonoBehaviour {
-	
+
+	public bool UseRandom = true;
+
 	public bool IsOn = false;
 
 	public bool Flash = false;
@@ -17,11 +19,30 @@ public class TileScript : MonoBehaviour {
 	private Color tileColor;
 	// Use this for initialization
 	void Start () {
+
+		if (UseRandom)
+		{
+			float val = Random.Range(0, 10);
+
+			if (val <= 7f)
+				IsOn = true;
+			else
+			{
+				Flash = true;
+
+				val = Random.Range(0.1f, 3);
+				FlashFrequency = val;
+
+				val = Random.Range(0.01f, FlashFrequency);
+				FlashDuration = val;
+			}
+		}
+
 		if (IsOn)
 		{
 			this.renderer.material.color = new Color(255, 255, 255, 255);
 		}
-
+		
 		flashTime = 0f;
 		duration = FlashDuration;
 		tileColor = this.renderer.material.color;

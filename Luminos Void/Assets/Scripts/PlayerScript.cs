@@ -195,6 +195,16 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		TileScript tile = collision.gameObject.GetComponent<TileScript> ();
+		
+		if (tile != null)
+		{
+			this.renderer.material.color = normalLight;
+		}
+	}
+
 	void OnTriggerStay2D(Collider2D otherCollider)
 	{
 		TileScript tile = otherCollider.gameObject.GetComponent<TileScript> ();
@@ -212,14 +222,13 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
-//	void OnTriggerEnter2D(Collider2D otherCollider)
-//	{
-//		CameraCollisionScript collider = otherCollider.GetComponent<CameraCollisionScript>();
-//
-//		if (collider != null)
-//		{
-//
-//		}
-//
-//	}
+	void OnTriggerExit2D(Collider2D collider)
+	{
+		TileScript tile = collider.gameObject.GetComponent<TileScript> ();
+		
+		if (tile != null)
+		{
+			this.renderer.material.color = normalLight;
+		}
+	}
 }
