@@ -2,7 +2,28 @@
 using System.Collections;
 
 public class HUDScript : MonoBehaviour 
-{	
+{
+	public float maxHealth = 25;
+	private HealthScript health;
+	private float energy;
+
+	// Use this for initialization
+	void Start () 
+	{
+		health = GameObject.Find("Player").GetComponent<HealthScript>();
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+		energy = (float)health.hp / maxHealth;
+//		transform.localScale.x = (float)health.hp / maxHealth;
+		transform.localScale = new Vector3 (energy, 1, 1);
+		transform.localPosition = new Vector3(-1.28f + 1.28f * energy, 0, 0);
+	}
+}
+
+	/*
 	private float originalWidth = 720;
 	private float originalHeight = 1280;
 	private Vector3 scale;
@@ -78,3 +99,5 @@ public class HUDScript : MonoBehaviour
 	}
 	
 }
+
+*/
