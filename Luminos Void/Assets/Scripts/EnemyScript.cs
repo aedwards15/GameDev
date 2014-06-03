@@ -3,8 +3,6 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
-	public enum EnemyType { Type1, Type2, Type3 };
-	public bool enemy = true;
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private WeaponScript[] weapons;

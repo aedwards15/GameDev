@@ -30,8 +30,8 @@ public class OpeningSceneScript : MonoBehaviour {
 	}
 	
 	IEnumerator Wait() {
-		yield return new WaitForSeconds(14.1f); //this will wait 5 seconds 
+		yield return new WaitForSeconds(13.5f); //this will wait 5 seconds 
 		
-		Application.LoadLevel("scene1");
+		Application.LoadLevel("Room1");
 	}
 }
