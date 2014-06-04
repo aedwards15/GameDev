@@ -22,6 +22,8 @@ public class PlayerScript : MonoBehaviour {
 	
 	public Sprite[] weaponSprites;
 
+	private float deathTimer = 0.0f;
+
 	void Awake()
 	{
 		playerHealth = this.GetComponent<HealthScript> ();
@@ -53,6 +55,8 @@ public class PlayerScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
+		deathTimer += Time.deltaTime;
 
 		if (!isDead)
 		{
@@ -67,6 +71,13 @@ public class PlayerScript : MonoBehaviour {
 		{
 			movementX = 0;
 			movementY = 0;
+
+			deathTimer += Time.deltaTime;
+
+			if(deathTimer > 10)
+			{
+				Application.LoadLevel("PlayAgain");
+			}
 		}
 	}
 
