@@ -1,36 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyWalkerScript : MonoBehaviour {
-
-	public int Health = 5;
+public class EnemyWalkerScript : EnemyScript {
 
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private Animator animator;
 	private GameObject player;
+	private Transform healthBar;
 	
 	void Awake()
 	{
 		animator = GetComponent<Animator> ();
 		moveScript = GetComponent<MoveScript> ();
+		healthBar = transform.FindChild ("Health Bar");
 
 		if (player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
-	}
-
-	public void Damage(int damageCount)
-	{
-		Health -= damageCount;
-		
-		if (Health <= 0) 
-		{
-			//SpecialEffectsHelper.Instance.Explosion(transform.position);
-			
-			//SoundEffectsHelper.Instance.MakeExplosionSound();
-
-			Dead();
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D otherCollider)
@@ -39,9 +25,17 @@ public class EnemyWalkerScript : MonoBehaviour {
 		
 		if (shot != null)
 		{
-			Damage (shot.damage);
+			HealthScript health = this.GetComponent<HealthScript>();
+
+			if (health != null)
+			{
+				health.Damage (shot.damage);
 			
-			Destroy (shot.gameObject);
+				Destroy (shot.gameObject);
+
+				if (health.hp <= 0)
+					Dead();
+			}
 		}
 	}
 
@@ -53,27 +47,94 @@ public class EnemyWalkerScript : MonoBehaviour {
 		moveScript.enabled = false;
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		PlayerScript playerCollide = collision.gameObject.GetComponent<PlayerScript> ();
+
+		if (playerCollide != null)
+		{
+			animator.SetTrigger("Attack");
+			playedLeft = false;
+			playedRight = false;
+			HealthScript health = playerCollide.gameObject.GetComponent<HealthScript>();
+
+			if (health != null)
+			{
+				health.Damage(1);
+			}
+		}
+	}
+
+	private float cooldown = .75f;
+	void OnCollisionStay2D(Collision2D collision)
+	{
+		PlayerScript playerCollide = collision.gameObject.GetComponent<PlayerScript> ();
+
+		if (cooldown <= 0)
+		{
+			cooldown = .75f;
+			if (playerCollide != null)
+			{
+				HealthScript health = playerCollide.gameObject.GetComponent<HealthScript>();
+				
+				if (health != null)
+				{
+					health.Damage(1);
+				}
+			}
+		}
+		else
+		{
+			cooldown -= Time.deltaTime;
+		}
+	}
+
 	void Dead()
 	{
 		animator.SetTrigger ("GoDie");
 		collider2D.enabled = false;
-		moveScript.enabled = false;
+		moveScript.speed = Vector2.zero;
+		moveScript.direction = Vector2.zero;
 		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1);
+		isDead = true;
 	}
-	
+
+	private bool playedRight = false;
+	private bool playedLeft = false;
 	// Update is called once per frame
 	void Update () {
-		
-		if (hasSpawn)
+
+		healthBar.rotation = Quaternion.Euler (0, 0, 0);
+		if (hasSpawn && !isDead)
 		{
 			moveScript.direction = Vector3.Normalize(player.transform.position - this.transform.position);
+
+
+
+			if (moveScript.direction.x < 0 && !playedLeft)
+			{
+				animator.SetTrigger("WalkLeft");
+				playedLeft = true;
+				playedRight = false;
+			}
+			else if (moveScript.direction.x > 0 && !playedRight)
+			{
+				animator.SetTrigger("WalkRight");
+				playedRight = true;
+				playedLeft = false;
+			}
+
 		}
-		else
+		else if (!isDead)
 		{
 			if (renderer.IsVisibleFrom(Camera.main))
 			{
 				Spawn();
 			}
+		}
+		else
+		{
+			moveScript.direction = Vector3.Normalize(player.transform.position - this.transform.position);
 		}
 	}
 	

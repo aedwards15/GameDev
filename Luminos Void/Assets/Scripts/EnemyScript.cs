@@ -3,53 +3,14 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
-	private bool hasSpawn;
-	private MoveScript moveScript;
-	private WeaponScript[] weapons;
-	private bool hasWeapons;
+	public bool isDead = false;
 
-	void Awake()
-	{
-		weapons = GetComponentsInChildren<WeaponScript> ();
-
-		if (weapons.Length > 0)
-			hasWeapons = true;
-		else
-			hasWeapons = false;
-
-		moveScript = GetComponent<MoveScript> ();
-	}
-
-	// Use this for initialization
 	void Start () {
-		hasSpawn = false;
-		
-		collider2D.enabled = false;
-		moveScript.enabled = false;
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
-		if (hasSpawn == false)
-		{
-			if (renderer.IsVisibleFrom(Camera.main))
-			{
-				Spawn();
-			}
-		}
-		else
-		{
-
-		}
-	}
-	
-	private void Spawn()
-	{
-		hasSpawn = true;
-		
-		collider2D.enabled = true;
-		
-		moveScript.enabled = true;
 	}
 }

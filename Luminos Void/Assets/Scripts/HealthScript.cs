@@ -8,8 +8,6 @@ public class HealthScript : MonoBehaviour {
 	
 	public bool isEnemy = true;
 
-
-	
 	void Awake()
 	{
 	}
@@ -17,31 +15,8 @@ public class HealthScript : MonoBehaviour {
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
-		
-		if (hp <= 0) 
-		{
-			//SpecialEffectsHelper.Instance.Explosion(transform.position);
-			
-			//SoundEffectsHelper.Instance.MakeExplosionSound();
-			
-			Destroy (gameObject);
-		}
 	}
-	
-	void OnTriggerEnter2D(Collider2D otherCollider)
-	{
-		ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript> ();
-		
-		if (shot != null)
-		{
-			if (shot.isEnemyShot != isEnemy)
-			{
-				Damage (shot.damage);
-				
-				Destroy (shot.gameObject);
-			}
-		}
-	}
+
 	// Use this for initialization
 	void Start () {
 		

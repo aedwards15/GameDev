@@ -10,34 +10,64 @@ public class PlayerScript : MonoBehaviour {
 	private float movementY;
 
 	private Animator animator;
-	private WeaponScript weapons;
-	private List<Transform> childs;
+	private WeaponScript weaponScript;
+	private Transform weapon;
+	private Transform weaponObject;
 
 	private Color litUp;
 	private Color normalLight;
 
+	private bool isDead = false;
+	private HealthScript playerHealth;
+	
+	public Sprite[] weaponSprites;
+
 	void Awake()
 	{
+		playerHealth = this.GetComponent<HealthScript> ();
 		animator = GetComponent<Animator>();
-		childs = new List<Transform> ();
 
 		normalLight = this.renderer.material.color;
 		litUp = new Color (255, 255, 255, 255);
-		//weapons = GetComponentsInChildren<WeaponScript>();
-		for (int i = 0; i < transform.childCount; i++)
-		{
-			Transform child = transform.GetChild(i);
-			
-			childs.Add(child);
-		}
-		weapons = childs[0].GetComponent<WeaponScript>();
+		//weapons = GetComponentInChildren<WeaponScript>();
+		weapon = transform.Find ("Weapon");
+		weaponObject = weapon.transform.Find ("WeaponObject");
+		weaponScript = weapon.GetComponentInChildren<WeaponScript> ();
+		//weaponSprites = Resources.LoadAll<Sprite>("shrimp_0");
+	}
+
+	private void Dead()
+	{
+		animator.ResetTrigger("WalkAway");
+		animator.ResetTrigger("WalkToward");
+		animator.ResetTrigger("WalkRight");
+		animator.ResetTrigger("WalkLeft");
+		animator.ResetTrigger ("GoIdle");
+		animator.SetTrigger ("DieRight");
+		collider2D.enabled = false;
+		//moveScript.speed = Vector2.zero;
+		//moveScript.direction = Vector2.zero;
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1);
+		isDead = true;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		Shoot();
 
-		Move();
+		if (!isDead)
+		{
+			Shoot();
+
+			Move();
+
+			if (playerHealth.hp <= 0)
+				Dead();
+		}
+		else
+		{
+			movementX = 0;
+			movementY = 0;
+		}
 	}
 
 	private void Shoot()
@@ -46,16 +76,16 @@ public class PlayerScript : MonoBehaviour {
 		
 		if (shoot)
 		{
-			if (weapons != null && weapons.CanAttack)
+			if (weaponScript != null && weaponScript.CanAttack)
 			{
-				Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+				Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - weapon.transform.position;
 				diff.Normalize();
 				
 				float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-				childs[0].rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+				weaponObject.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 				
 				//SoundEffectsHelper.Instance.MakePlayerShotSound();
-				weapons.Attack(false);
+				weaponScript.Attack(false);
 			}
 		}
 	}
@@ -74,7 +104,9 @@ public class PlayerScript : MonoBehaviour {
 		
 		if (inputY > 0)
 		{
-			childs[0].position = new Vector3(transform.position.x, childs[0].position.y, transform.position.z + 1);
+			//weapon.position = new Vector3(transform.position.x, weapon.position.y, transform.position.z + 1);
+
+			//weapon.GetComponent<SpriteRenderer>().sprite = weaponSprites[2];
 			
 			if (!PlayedAway)
 			{
@@ -91,8 +123,10 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (inputY < 0)
 		{
-			childs[0].position = new Vector3(transform.position.x, childs[0].position.y, transform.position.z);
-			
+			//weapon.position = new Vector3(transform.position.x, weapon.position.y, transform.position.z);
+
+			//weapon.GetComponent<SpriteRenderer>().sprite = weaponSprites[0];
+
 			if (!PlayedToward)
 			{
 				animator.ResetTrigger("GoIdle");
@@ -108,8 +142,10 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (inputX > 0)
 		{
-			childs[0].position = new Vector3(transform.position.x + renderer.bounds.size.x, childs[0].position.y, transform.position.z);
-			
+			//childs[0].position = new Vector3(transform.position.x + renderer.bounds.size.x, childs[0].position.y, transform.position.z);
+
+			//weapon.GetComponent<SpriteRenderer>().sprite = weaponSprites[0];
+
 			if (!PlayedRight)
 			{
 				animator.ResetTrigger("GoIdle");
@@ -125,8 +161,10 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (inputX < 0)
 		{
-			childs[0].position = new Vector3(transform.position.x - renderer.bounds.size.x, childs[0].position.y, transform.position.z);
-			
+			//childs[0].position = new Vector3(transform.position.x - renderer.bounds.size.x, childs[0].position.y, transform.position.z);
+
+			//weapon.GetComponent<SpriteRenderer>().sprite = weaponSprites[1];
+
 			if (!PlayedLeft)
 			{
 				animator.ResetTrigger("GoIdle");
@@ -183,17 +221,7 @@ public class PlayerScript : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2(movementX, movementY);
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript> ();
 
-		if (enemy != null)
-		{
-			HealthScript playerHealth = this.GetComponent<HealthScript>();
-			if (playerHealth != null) 
-				playerHealth.Damage(1);
-		}
-	}
 
 	void OnCollisionExit2D(Collision2D collision)
 	{
