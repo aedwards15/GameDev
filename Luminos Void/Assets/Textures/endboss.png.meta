@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 5646538567e37524d8e1c6584f187b3b
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: endboss_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1551
+        width: 297
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1551
+        width: 300
+        height: 743
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_2
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1576
+        width: 309
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_3
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1551
+        width: 297
+        height: 745
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_4
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1566
+        width: 297
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_5
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 1584
+        width: 313
+        height: 710
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_6
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 1940
+        width: 192
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_7
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 2016
+        width: 217
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_8
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 1894
+        width: 254
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_9
+      rect:
+        serializedVersion: 2
+        x: 3358
+        y: 1870
+        width: 172
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_10
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1466
+        width: 201
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_11
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 1539
+        width: 318
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_12
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 1604
+        width: 150
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 802
+        width: 291
+        height: 665
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_14
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 824
+        width: 294
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_15
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 801
+        width: 294
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_16
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 796
+        width: 317
+        height: 671
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_17
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 818
+        width: 294
+        height: 649
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_18
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 817
+        width: 294
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_19
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1213
+        width: 237
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_20
+      rect:
+        serializedVersion: 2
+        x: 2547
+        y: 1178
+        width: 250
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_21
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 1217
+        width: 333
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_22
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 788
+        width: 156
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_23
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 779
+        width: 257
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_24
+      rect:
+        serializedVersion: 2
+        x: 2932
+        y: 781
+        width: 153
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_25
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 1030
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_26
+      rect:
+        serializedVersion: 2
+        x: 3179
+        y: 895
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_27
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 948
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_28
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 871
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_29
+      rect:
+        serializedVersion: 2
+        x: 3189
+        y: 755
+        width: 64
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 57
+        width: 310
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_33
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 65
+        width: 310
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_34
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 52
+        width: 310
+        height: 696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_35
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 73
+        width: 316
+        height: 675
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_36
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 78
+        width: 310
+        height: 670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_37
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 61
+        width: 309
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_40
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 54
+        width: 346
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_41
+      rect:
+        serializedVersion: 2
+        x: 3189
+        y: 628
+        width: 88
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_44
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 61
+        width: 456
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: endboss_45
+      rect:
+        serializedVersion: 2
+        x: 3122
+        y: 49
+        width: 343
+        height: 454
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 

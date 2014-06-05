@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	public Sprite[] weaponSprites;
 
-	private float deathTimer = 0.0f;
+	private float deathTimer = 5f;
 
 	void Awake()
 	{
@@ -55,9 +55,6 @@ public class PlayerScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-		deathTimer += Time.deltaTime;
-
 		if (!isDead)
 		{
 			Shoot();
@@ -72,9 +69,9 @@ public class PlayerScript : MonoBehaviour {
 			movementX = 0;
 			movementY = 0;
 
-			deathTimer += Time.deltaTime;
+			deathTimer -= Time.deltaTime;
 
-			if(deathTimer > 10)
+			if(deathTimer <= 0f)
 			{
 				Application.LoadLevel("PlayAgain");
 			}
@@ -232,17 +229,6 @@ public class PlayerScript : MonoBehaviour {
 		rigidbody2D.velocity = new Vector2(movementX, movementY);
 	}
 
-
-
-	void OnCollisionExit2D(Collision2D collision)
-	{
-		TileScript tile = collision.gameObject.GetComponent<TileScript> ();
-		
-		if (tile != null)
-		{
-			this.renderer.material.color = normalLight;
-		}
-	}
 
 	void OnTriggerStay2D(Collider2D otherCollider)
 	{

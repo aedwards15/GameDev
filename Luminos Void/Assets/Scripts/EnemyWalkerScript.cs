@@ -47,25 +47,34 @@ public class EnemyWalkerScript : EnemyScript {
 		moveScript.enabled = false;
 	}
 
+	private float cooldown = 0f;
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		PlayerScript playerCollide = collision.gameObject.GetComponent<PlayerScript> ();
 
-		if (playerCollide != null)
+		if (cooldown <= 0)
 		{
-			animator.SetTrigger("Attack");
-			playedLeft = false;
-			playedRight = false;
-			HealthScript health = playerCollide.gameObject.GetComponent<HealthScript>();
-
-			if (health != null)
+			cooldown = .75f;
+			if (playerCollide != null)
 			{
-				health.Damage(1);
+				animator.SetTrigger("Attack");
+				playedLeft = false;
+				playedRight = false;
+				HealthScript health = playerCollide.gameObject.GetComponent<HealthScript>();
+
+				if (health != null)
+				{
+					health.Damage(1);
+				}
 			}
+		}
+		else
+		{
+			cooldown -= Time.deltaTime;
 		}
 	}
 
-	private float cooldown = .75f;
+
 	void OnCollisionStay2D(Collision2D collision)
 	{
 		PlayerScript playerCollide = collision.gameObject.GetComponent<PlayerScript> ();
