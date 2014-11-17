@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyScript : MonoBehaviour {
 
 	public bool isDead = false;
+	public bool shouldSpawn = false;
 
 	void Start () {
 

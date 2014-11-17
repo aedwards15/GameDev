@@ -3,7 +3,6 @@ using System.Collections;
 
 public class EnemyWalkerScript : EnemyScript {
 
-	private bool hasSpawn;
 	private MoveScript moveScript;
 	private Animator animator;
 	private GameObject player;
@@ -41,10 +40,12 @@ public class EnemyWalkerScript : EnemyScript {
 
 	// Use this for initialization
 	void Start () {
-		hasSpawn = false;
-		
-		collider2D.enabled = false;
-		moveScript.enabled = false;
+
+		if (!shouldSpawn)
+		{
+			collider2D.enabled = false;
+			moveScript.enabled = false;
+		}
 	}
 
 	private float cooldown = 0f;
@@ -114,7 +115,7 @@ public class EnemyWalkerScript : EnemyScript {
 	void Update () {
 
 		healthBar.rotation = Quaternion.Euler (0, 0, 0);
-		if (hasSpawn && !isDead)
+		if (shouldSpawn && !isDead)
 		{
 			moveScript.direction = Vector3.Normalize(player.transform.position - this.transform.position);
 
@@ -149,7 +150,7 @@ public class EnemyWalkerScript : EnemyScript {
 	
 	private void Spawn()
 	{
-		hasSpawn = true;
+		shouldSpawn = true;
 		
 		collider2D.enabled = true;
 		

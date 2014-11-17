@@ -9,6 +9,7 @@ public class ConversationScript : MonoBehaviour {
 	Vector3 cameraPos;
 	GameObject cameraObj;
 	CameraScript cameraScript;
+	CameraScript cameraScriptConvo;
 	// Use this for initialization
 
 	void Awake ()
@@ -22,7 +23,12 @@ public class ConversationScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		cameraScript = player.GetComponent<CameraScript> ();
 		cameraScript.enabled = false;
-		
+		cameraScriptConvo = convoObject.GetComponent<CameraScript> ();
+		if (cameraScriptConvo != null)
+		{
+			cameraScriptConvo.enabled = true;
+		}
+
 		player.collider2D.enabled = false;
 		
 		//foreach (GameObject game in gameObjects)
@@ -49,6 +55,12 @@ public class ConversationScript : MonoBehaviour {
 		yield return new WaitForSeconds (TimeForAnimation);
 
 		player.collider2D.enabled = true;
+
+		if (cameraScriptConvo != null)
+		{
+			cameraScriptConvo.enabled = false;
+		}
+
 		cameraScript.enabled = true;
 	}
 }

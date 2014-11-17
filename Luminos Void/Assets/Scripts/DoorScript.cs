@@ -15,6 +15,7 @@ public class DoorScript : MonoBehaviour
 	void Start () { }
 
 	private bool TriggerSet = false;
+	private bool DoorOpen = false;
 	void Update () 
 	{
 		allDead = true;
@@ -35,12 +36,21 @@ public class DoorScript : MonoBehaviour
 			if (!TriggerSet)
 			{
 				animator.SetTrigger("DoorOpen");
+				DoorOpen = true;
 				TriggerSet = true;
 			}
 		}
 		else
 		{
+
 			this.gameObject.collider2D.enabled = true;
+
+			if (DoorOpen)
+			{
+				animator.SetTrigger("DoorClose");
+				DoorOpen = false;
+				TriggerSet = false;
+			}
 		}
 	}
 }

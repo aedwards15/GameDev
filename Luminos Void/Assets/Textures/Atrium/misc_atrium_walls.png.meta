@@ -24,17 +24,18 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -44,6 +45,66 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: misc_atrium_walls_0
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 650
+        width: 156
+        height: 1232
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: misc_atrium_walls_1
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 650
+        width: 157
+        height: 1232
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: misc_atrium_walls_2
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1437
+        width: 2193
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: misc_atrium_walls_3
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 970
+        width: 2206
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: misc_atrium_walls_4
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 490
+        width: 2292
+        height: 390
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: misc_atrium_walls_5
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 183
+        width: 2333
+        height: 147
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
